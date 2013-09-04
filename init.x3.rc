@@ -303,7 +303,7 @@ on boot
 
     # Torch perms
     chown system camera /sys/devices/platform/tegra-i2c.2/i2c-2/2-0053/torch
-    chmod 0660 /sys/devices/platform/tegra-i2c.2/i2c-2/2-0053/torch
+    chmod 0666 /sys/devices/platform/tegra-i2c.2/i2c-2/2-0053/torch
 
 service nvcpud /system/bin/nvcpud
     class main
@@ -366,7 +366,7 @@ on post-fs-data
     mkdir /data/lgdrm 0770 system media
     setprop vold.post_fs_data_done 1
 
-    # Set buffer sizes from stock (lower readmax) 
+    # Set buffer sizes from stock (lower readmax)
     setprop net.tcp.buffersize.default 4096,87380,393216,4096,16384,110208
     setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
     setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
