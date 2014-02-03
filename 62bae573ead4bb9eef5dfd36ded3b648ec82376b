@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_fc10e9aa",
+        "filename": "cm.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10
+      },
+      "writtenOn": "2014-02-03T13:14:21Z",
+      "side": 1,
+      "message": "You can delete these lines completely. When we killed off gsm.mk, the telephony.mk functionality became implied in common_full_phone.mk.",
+      "revId": "62bae573ead4bb9eef5dfd36ded3b648ec82376b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
