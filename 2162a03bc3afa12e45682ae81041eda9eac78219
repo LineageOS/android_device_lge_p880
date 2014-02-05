@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_6c2544c1",
+        "filename": "ril/telephony/java/com/android/internal/telephony/X3RIL.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8565
+      },
+      "writtenOn": "2014-02-05T07:54:03Z",
+      "side": 1,
+      "message": "There is no clearRequestsList in RIL. But there is:\n/**\n     * Release each request in mRequestList then clear the list\n     * @param error is the RIL_Errno sent back\n     * @param loggable true means to print all requests in mRequestList\n     */\n    protected void clearRequestList(int error, boolean loggable) {",
+      "revId": "2162a03bc3afa12e45682ae81041eda9eac78219",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
