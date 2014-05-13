@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_0281eb4a",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1579
+      },
+      "writtenOn": "2014-05-13T22:08:07Z",
+      "side": 1,
+      "message": "Add getdefValue() should fixes the build error. However I think it should return getMaxValue() or something adequate value as default instead of -1",
+      "revId": "32309cb1a2b93108394cfed8917942ceb6aa3fbc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
