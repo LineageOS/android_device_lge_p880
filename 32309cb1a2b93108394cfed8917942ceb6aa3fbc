@@ -34,6 +34,24 @@
       "revId": "32309cb1a2b93108394cfed8917942ceb6aa3fbc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_e2e83719",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9206
+      },
+      "writtenOn": "2014-05-14T00:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da0c15f0_0281eb4a",
+      "revId": "32309cb1a2b93108394cfed8917942ceb6aa3fbc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
