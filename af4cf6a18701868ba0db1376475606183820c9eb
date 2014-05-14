@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_c293734e",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10
+      },
+      "writtenOn": "2014-05-14T03:37:01Z",
+      "side": 1,
+      "message": "Please clean up the whitespace (spaces vs tabs)",
+      "revId": "af4cf6a18701868ba0db1376475606183820c9eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
