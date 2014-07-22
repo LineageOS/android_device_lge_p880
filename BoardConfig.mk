@@ -15,8 +15,13 @@ TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := $(TARGET_CPU_VARIANT)
+ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
+ARCH_ARM_USE_NON_NEON_MEMCPY := true
 
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+# Optimization build flags
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
@@ -34,8 +39,6 @@ TARGET_RECOVERY_PRE_COMMAND := "/system/bin/setup-recovery"
 
 # Try to build the kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_x3_defconfig
-# Keep this as a fallback
-TARGET_PREBUILT_KERNEL := device/lge/p880/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB = device/lge/p880/fstab.x3
@@ -43,6 +46,9 @@ RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 
 TARGET_SPECIFIC_HEADER_PATH := device/lge/p880/include
+
+# Enable WEBGL in WebKit
+ENABLE_WEBGL := true
 
 BOARD_EGL_CFG := device/lge/p880/egl.cfg
 USE_OPENGL_RENDERER := true
@@ -85,6 +91,9 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/lge/p880/recovery-gfx.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/p880/recovery-keys.c
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_BATTERY_DEVICE_NAME := battery
+
+# Skip droiddoc build to save build time
+BOARD_SKIP_ANDROID_DOC_BUILD := true
 
 BOARD_SEPOLICY_DIRS := \
     device/lge/p880/selinux
