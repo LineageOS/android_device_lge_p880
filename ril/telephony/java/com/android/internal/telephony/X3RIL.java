@@ -40,6 +40,43 @@ public class X3RIL extends RIL implements CommandsInterface {
         send(rr);
     }
     
+    protected void
+    onRadioAvailable() {
+        // In case screen state was lost (due to process crash),
+        // this ensures that the RIL knows the correct screen state.
+
+        // TODO: Should query Power Manager and send the actual
+        // screen state. Just send true for now.
+        sendScreenState(true);
+   }
+
+    protected RadioState getRadioStateFromInt(int stateInt) {
+        RadioState state;
+
+        /* RIL_RadioState ril.h */
+        switch(stateInt) {
+            case 0: state = RadioState.RADIO_OFF; break;
+            case 1: state = RadioState.RADIO_UNAVAILABLE; break;
+            case 2: state = RadioState.SIM_NOT_READY; break;
+            case 3: state = RadioState.SIM_LOCKED_OR_ABSENT; break;
+            case 4: state = RadioState.SIM_READY; break;
+            case 5: state = RadioState.RUIM_NOT_READY; break;
+            case 6: state = RadioState.RUIM_READY; break;
+            case 7: state = RadioState.RUIM_LOCKED_OR_ABSENT; break;
+            case 8: state = RadioState.NV_NOT_READY; break;
+            case 9: state = RadioState.NV_READY; break;
+
+            default:
+                throw new RuntimeException(
+                            "Unrecognized RIL_RadioState: " + stateInt);
+        }
+        return state;
+    }
+
+    protected void switchToRadioState(RadioState newState) {
+        setRadioState(newState);
+    }
+
     @Override
     public void
     setCallForward(int action, int cfReason, int serviceClass,
@@ -117,12 +154,10 @@ public class X3RIL extends RIL implements CommandsInterface {
             case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED:
                 /* has bonus radio state int */
                 RadioState newState = getRadioStateFromInt(p.readInt());
-                p.setDataPosition(dataPosition);
-                super.processUnsolicited(p);
-                if (RadioState.RADIO_ON == newState) {
-                    setNetworkSelectionModeAutomatic(null);
-                }
-                return;
+                 if (RILJ_LOGD) unsljLogMore(response, newState.toString());
+
+                switchToRadioState(newState);
+            break;
             case RIL_UNSOL_LGE_FACTORY_READY:
                 //RIL_REQUEST_LGE_SEND_COMMAND 0
                 RILRequest rrLSC = RILRequest.obtain(
