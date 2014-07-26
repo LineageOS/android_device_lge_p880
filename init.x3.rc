@@ -74,6 +74,13 @@ on boot
 
     chown system system /sys/devices/virtual/input/lge_touch/keyguard
 
+# Start rild-daemon
+	service ril-daemon /system/bin/rild
+	socket rild stream 660 root radio
+	socket rild-debug stream 660 radio system
+	user root
+	group radio cache inet misc audio
+
 # Power control interface
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
