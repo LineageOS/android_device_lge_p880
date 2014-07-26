@@ -63,8 +63,10 @@
         <item>"mobile,0,0,0,-1,true"</item>
         <item>"mobile_mms,2,0,2,60000,true"</item>
         <item>"mobile_supl,3,0,2,60000,true"</item>
+        <item>"mobile_dun,4,0,3,60000,true"</item>
         <item>"mobile_hipri,5,0,3,60000,true"</item>
         <item>"mobile_bluetooth,7,7,1,-1,true"</item>
+        <item>"ethernet,9,9,1,-1,true"</item>
         <item>"wifi_p2p,13,1,0,-1,true"</item>
     </string-array>
 
@@ -80,10 +82,6 @@
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
     <bool name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Device type information conforming to Annex B format in WiFi Direct specification.
-    The default represents a dual-mode smartphone -->
-    <string translatable="false" name="config_wifi_p2p_device_type">1-0050F204-1</string>
 
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
@@ -185,20 +183,6 @@
 
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
-
-    <!-- Whether WiFi display is supported by this device.
-         There are many prerequisites for this feature to work correctly.
-         Here are a few of them:
-         * The WiFi radio must support WiFi P2P.
-         * The WiFi radio must support concurrent connections to the WiFi display and
-           to an access point.
-         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
-           remote submix module.  This module is used to record and stream system
-           audio output to the WiFi display encoder in the media server.
-         * The remote submix module "audio.r_submix.default" must be installed on the device.
-         * The device must be provisioned with HDCP keys (for protected content).
-    -->
-    <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
