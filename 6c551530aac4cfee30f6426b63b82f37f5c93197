@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_720ce794",
+        "filename": "cm.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8458
+      },
+      "writtenOn": "2014-07-28T04:58:26Z",
+      "side": 0,
+      "message": "Move this under PRODUCT_BRAND\nrename it PRODUCT_MODEL :\u003d Optimus X4HD\nThen i can accept it ;)",
+      "revId": "6c551530aac4cfee30f6426b63b82f37f5c93197",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
