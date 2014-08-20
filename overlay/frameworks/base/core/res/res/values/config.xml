@@ -178,6 +178,8 @@
 
     <bool name="config_dreamsEnabledByDefault">false</bool>
 
+    <bool name="config_enableLockScreenRotation">true</bool>
+
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
 
