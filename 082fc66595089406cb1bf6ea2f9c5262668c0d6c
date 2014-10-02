@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1b2928_79101802",
+        "filename": "system.prop",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8458
+      },
+      "writtenOn": "2014-10-02T09:37:18Z",
+      "side": 1,
+      "message": "This can go  in \nP880.mk #107\nand merge it with \nhttp://review.cyanogenmod.org/#/c/72819/\nBut finish it with bfq as this is what we are currently using",
+      "revId": "082fc66595089406cb1bf6ea2f9c5262668c0d6c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
